@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import ChatWindow from "./components/ChatWindow";
 import ChatInput from "./components/ChatInput";
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000";
 
 export default function Home() {
   const [messages, setMessages] = useState([]);

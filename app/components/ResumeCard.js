@@ -23,7 +23,7 @@ export default function ResumeCard({ resume, index }) {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = `http://localhost:8000/api/download/${encodeURIComponent(filename)}`;
+    link.href = `${process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000"}/api/download/${encodeURIComponent(filename)}`;
     link.download = filename;
     link.click();
   };

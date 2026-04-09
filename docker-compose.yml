@@ -1,0 +1,18 @@
+# ==========================================
+# Frontend — Docker Compose (standalone)
+# ==========================================
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_BASE=http://localhost:8000
+    container_name: resumeai-frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
+    restart: unless-stopped
